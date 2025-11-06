@@ -7,7 +7,7 @@ type InputProps = {
     PRIMARY: string
   }
   icon?: React.ReactNode
-  type?: "password" | "email" | "text" | "number"
+  type?: "password" | "email" | "text" | "number" | "tel"
   placeholder?: string
   value: string,
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
@@ -48,12 +48,12 @@ export default function Input({
         }}
       >
         <input
-  type={type}
-  placeholder={placeholder}
-  value={value}
-  onChange={onChange}
-  className="bg-transparent outline-none text-gray-200 placeholder-gray-400 flex-1"
-/>
+          type={type}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          className="bg-transparent outline-none text-gray-200 placeholder-gray-400 flex-1"
+        />
 
 
         {icon && (

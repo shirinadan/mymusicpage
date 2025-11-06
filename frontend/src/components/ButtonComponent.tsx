@@ -36,7 +36,7 @@ const ButtonComponent = ({ onClick, label, size }: ButtonComponentProps) => {
   return (
     <div>
        <button
-        className={`bg-[#7C4DFF] hover:bg-[#6E42E6] text-white font-semibold 
+        className={`bg-[#7C4DFF] hover:bg-[#6E42E6] text-white font-semibold cursor-pointer
                     rounded-full shadow-md transition duration-300 
                     focus:outline-none focus:ring-2 focus:ring-[#9C72FF] ${sizeVal}`}
         onClick={onClick}

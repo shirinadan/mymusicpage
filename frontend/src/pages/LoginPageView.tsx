@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import ButtonComponent from "../components/ButtonComponent";
 import Input from "../components/Input";
 import Headphoneslogo from "../assets/icons/Headphoneslogo.png";
@@ -6,6 +7,10 @@ import Headphoneslogo from "../assets/icons/Headphoneslogo.png";
 function LoginPageView() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+
+
 
   const handleLogin = () => {
     console.log("Login button clicked!");
@@ -13,17 +18,21 @@ function LoginPageView() {
     console.log("Password:", password);
   };
 
+  const handleSignUpNav = () => {
+    navigate('/sign-up');
+  }
+
   const size = 54;
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
       <img
-  src={Headphoneslogo}
-  alt="Headphones logo"
-  className="w-1/4 h-1/ mb-6"
-/>
+        src={Headphoneslogo}
+        alt="Headphones logo"
+        className="w-80 mb-6"
+      />
 
-<h1 className="text-4xl font-bold mb-8">Login</h1>
+      <h1 className="text-4xl font-bold mb-8">Login</h1>
 
 
       <div className="mb-4">
@@ -51,7 +60,7 @@ function LoginPageView() {
       <a href="#" className="text-sm text-gray-400 hover:text-white mb-6">
         Forgot password?
       </a>
-
+    
       <ButtonComponent
         size="large"
         label="Log in"
@@ -60,9 +69,12 @@ function LoginPageView() {
 
       <p className="mt-6 text-gray-400 text-sm">
         Don’t have an account?{" "}
-        <a href="#" className="text-[#7C4DFF] hover:text-[#956EFF]">
+        <span 
+          className="text-[#7C4DFF] hover:text-[#956EFF] hover:cursor-pointer"
+          onClick={handleSignUpNav}
+        >
           Sign up
-        </a>
+        </span>
       </p>
     </div>
   );
